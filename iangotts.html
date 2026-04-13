@@ -29,6 +29,19 @@
   .nav-links{display:flex;gap:2.5rem;list-style:none;}
   .nav-links a{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-pale);text-decoration:none;transition:color .2s;}
   .nav-links a:hover{color:var(--gold);}
+  .nav-watch{color:var(--gold) !important;border:1px solid rgba(201,161,60,.4);padding:.3rem .9rem;border-radius:2px;transition:background .2s !important;}
+  .nav-watch:hover{background:rgba(201,161,60,.12) !important;}
+  /* VIDEO SECTION */
+  #watch{background:linear-gradient(160deg,rgba(123,47,224,.22) 0%,transparent 60%),var(--purple-deep);position:relative;overflow:hidden;}
+  #watch::before{content:'';position:absolute;left:-150px;bottom:-150px;width:500px;height:500px;border-radius:50%;border:1px solid rgba(201,161,60,.06);pointer-events:none;}
+  .video-grid{display:grid;grid-template-columns:1fr 1.8fr;gap:5rem;align-items:center;}
+  .video-left p{margin-bottom:1.2rem;}
+  .video-meta{display:flex;flex-direction:column;gap:.8rem;margin-top:2rem;}
+  .video-tag{display:inline-flex;align-items:center;gap:.6rem;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-pale);font-weight:300;}
+  .video-tag::before{content:'';width:20px;height:1px;background:var(--gold);opacity:.6;}
+  .video-wrap{position:relative;width:100%;padding-bottom:56.25%;border:1px solid rgba(201,161,60,.25);overflow:hidden;box-shadow:0 0 60px rgba(123,47,224,.25);}
+  .video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+  .video-wrap::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--purple-vivid),var(--gold));z-index:1;}
 
   /* HERO */
   #hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:7rem 2rem 5rem;text-align:center;}
@@ -79,9 +92,9 @@
   .why-left p{margin-bottom:1.2rem;}
   .pull-quote{margin:2.5rem 0;padding:1.5rem 2rem;border-left:2px solid var(--purple-vivid);background:rgba(123,47,224,.1);font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:300;font-style:italic;color:var(--gold-light);line-height:1.55;}
   .why-right{display:flex;flex-direction:column;gap:1.1rem;}
-  .value-item{display:grid;grid-template-columns:auto 1fr;gap:1.1rem;padding:1.4rem;border:1px solid rgba(201,161,60,.16);background:rgba(201,161,60,.025);transition:border-color .25s,background .25s,transform .25s;}
+  .value-item{padding:1.4rem 1.6rem;border:1px solid rgba(201,161,60,.16);background:rgba(201,161,60,.025);transition:border-color .25s,background .25s,transform .25s;}
   .value-item:hover{border-color:rgba(123,47,224,.7);background:rgba(123,47,224,.1);transform:translateX(5px);}
-  .value-icon{font-size:1.3rem;padding-top:.1rem;}
+  .value-icon{display:none;}
   .value-title{font-family:'Cinzel',serif;font-size:.74rem;letter-spacing:.11em;color:var(--gold);margin-bottom:.35rem;}
   .value-item p{font-size:.86rem;}
 
@@ -142,7 +155,7 @@
   /* RESPONSIVE */
   @media(max-width:900px){
     nav{padding:1rem 1.5rem;} .nav-links{display:none;}
-    .why-grid,.about-grid{grid-template-columns:1fr;gap:3rem;}
+    .why-grid,.about-grid,.video-grid{grid-template-columns:1fr;gap:3rem;}
     .books-grid{grid-template-columns:1fr 1fr;}
     .corner{display:none;}
   }
@@ -168,6 +181,7 @@
     <li><a href="#books">Books</a></li>
     <li><a href="#writing">Writing</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="#watch" class="nav-watch">Watch Live</a></li>
   </ul>
 </nav>
 
@@ -184,7 +198,7 @@
       <span>·</span>Salesforce Ecosystem<span>·</span>ISV Strategy<span>·</span>Go-to-Market<span>·</span>
     </div>
 
-    <h1>Ian<br><em>Gotts</em></h1>
+    <h1>Ian <em style="display:inline;">Gotts</em></h1>
 
     <div class="hero-role">
       <div class="role-pill active">Industry Analyst</div>
@@ -368,6 +382,42 @@
   </div>
 </section>
 
+<!-- WATCH LIVE -->
+<section id="watch">
+  <div class="container">
+    <div class="video-grid">
+
+      <div class="video-left fade-up">
+        <div class="section-label">Watch Live</div>
+        <h2>See Ian<br><em>in action.</em></h2>
+        <p>The best way to understand what Ian brings to a room — or a board —
+           is to watch him work. Sharp thinking, plain English, and the kind of
+           insight that makes complex ideas feel obvious.</p>
+        <div class="video-meta">
+          <span class="video-tag">Conference Speaker</span>
+          <span class="video-tag">Industry Analyst</span>
+          <span class="video-tag">Salesforce Ecosystem</span>
+        </div>
+        <div style="margin-top:2rem;">
+          <a href="https://youtu.be/lowGgvLfNdI" target="_blank" class="btn btn-outline">Open on YouTube ↗</a>
+        </div>
+      </div>
+
+      <div class="video-right fade-up">
+        <div class="video-wrap">
+          <iframe
+            src="https://www.youtube.com/embed/lowGgvLfNdI"
+            title="Ian Gotts — Watch Live"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact">
   <div class="container">
@@ -380,7 +430,7 @@
       <p>Advisory engagements. Board positions. Conference keynotes. Analyst briefings.
          If you're an ISV navigating the Salesforce ecosystem, fixing your go-to-market,
          or making sense of AI agents — Ian is the person to call.</p>
-      <a href="mailto:ian@elements.cloud" class="btn btn-gold">ian@elements.cloud</a>
+      <a href="/cdn-cgi/l/email-protection#1e777f705e7b727b737b706a6d307d72716b7a" class="btn btn-gold"><span class="__cf_email__" data-cfemail="e68f8788a6838a838b83889295c8858a899382">[email&#160;protected]</span></a>
       <div class="contact-links">
         <a href="https://www.linkedin.com/in/iangotts/" class="contact-link" target="_blank">LinkedIn</a>
         <a href="https://medium.com/@iangotts" class="contact-link" target="_blank">Medium</a>
@@ -395,7 +445,7 @@
   <p>© 2026 Ian Gotts · Industry Analyst · Author · Speaker · Chairman, Elements.cloud</p>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1 });
@@ -403,11 +453,4 @@
   document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 
   // stagger siblings
-  document.querySelectorAll('.why-right, .books-grid').forEach(grid => {
-    grid.querySelectorAll('.fade-up, .book-card, .value-item').forEach((el, i) => {
-      el.style.transitionDelay = `${i * 0.1}s`;
-    });
-  });
-</script>
-</body>
-</html>
+  do
